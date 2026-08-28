@@ -1,0 +1,339 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome Home ❤️ | Raksha Bandhan</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- Decorative elements -->
+    <div class="floating flower flower1">🌸</div>
+    <div class="floating flower flower2">🌺</div>
+    <div class="floating flower flower3">🌼</div>
+
+    <header>
+        <div class="rakhi">🪢</div>
+
+        <h1>THE JOURNEY STARTS HERE</h1>
+
+        <p class="welcome">🏠 WELCOME HOME 🏠</p>
+
+        <p class="subtitle">
+            A tiny Raksha Bandhan adventure made with ❤️
+        </p>
+    </header>
+
+
+    <main>
+
+        <!-- STEP 1 -->
+        <section class="card active" id="ageSection">
+
+            <div class="icon">🎀</div>
+
+            <h2>Before we begin...</h2>
+
+            <p>
+                Tell me your age to enter this little journey.
+            </p>
+
+            <input
+                type="number"
+                id="age"
+                placeholder="Enter your age"
+                min="1"
+            >
+
+            <button onclick="checkAge()">
+                Begin Journey ✨
+            </button>
+
+            <p id="ageMessage" class="message"></p>
+
+        </section>
+
+
+        <!-- STEP 2 -->
+        <section class="card hidden" id="phoneSection">
+
+            <div class="icon">📱</div>
+
+            <h2>Hmm... who are you?</h2>
+
+            <p>
+                Dial the first three digits of your phone number 👀
+            </p>
+
+            <input
+                type="number"
+                id="phone"
+                placeholder="XXX"
+            >
+
+            <button onclick="checkPhone()">
+                Continue 💫
+            </button>
+
+            <p id="phoneMessage" class="message"></p>
+
+        </section>
+
+
+        <!-- PALLAB -->
+        <section class="card hidden" id="pallabSection">
+
+            <div class="icon">🦸‍♂️</div>
+
+            <h2>Are you Pallab's hero friend?</h2>
+
+            <p>
+                So... are you ready for a very important question?
+            </p>
+
+            <h3>
+                If Pallab and Soumi are drowning in a well,
+                whom will you save?
+            </h3>
+
+            <div class="choices">
+
+                <button onclick="savePallab()">
+                    🦸‍♂️ Pallab
+                </button>
+
+                <button onclick="saveSoumi()">
+                    👧 Soumi
+                </button>
+
+            </div>
+
+            <p id="pallabMessage" class="message"></p>
+
+        </section>
+
+
+        <!-- YES NO -->
+        <section class="card hidden" id="readySection">
+
+            <div class="icon">💝</div>
+
+            <h2>Plot twist!</h2>
+
+            <p>
+                Pallab grabbed Soumi's hand too and saved her!
+                🎉
+            </p>
+
+            <p>
+                Are you ready to continue this journey?
+            </p>
+
+            <div class="choices">
+
+                <button onclick="continueJourney()">
+                    YES ❤️
+                </button>
+
+                <button onclick="notReady()">
+                    NO 😭
+                </button>
+
+            </div>
+
+            <p id="readyMessage" class="message"></p>
+
+        </section>
+
+
+        <!-- RAKHI -->
+        <section class="card hidden" id="rakhiSection">
+
+            <div class="rakhi-big">
+                🪢
+            </div>
+
+            <h2>Happy Raksha Bandhan! 🥰</h2>
+
+            <p class="special">
+                Happy Rakshabandhan, my dear sister! ❤️
+            </p>
+
+            <p>
+                Now comes the most dangerous part...
+            </p>
+
+            <h3>
+                Choose your fortune 🎁
+            </h3>
+
+            <p class="small-text">
+                One option gives you a gift from Pallab.
+                The others are suspiciously expensive... 👀
+            </p>
+
+            <div class="gift-grid">
+
+                <button onclick="gift(1)">
+                    🎁<br>
+                    <span>Fortune 1</span>
+                </button>
+
+                <button onclick="gift(2)">
+                    🍰<br>
+                    <span>Fortune 2</span>
+                </button>
+
+                <button onclick="gift(3)">
+                    ☕<br>
+                    <span>Fortune 3</span>
+                </button>
+
+                <button onclick="gift(4)">
+                    💝<br>
+                    <span>Fortune 4</span>
+                </button>
+
+                <button onclick="gift(5)">
+                    🥟<br>
+                    <span>Fortune 5</span>
+                </button>
+
+            </div>
+
+            <div id="giftResult" class="gift-result"></div>
+
+        </section>
+
+
+        <!-- SOUMI -->
+        <section class="card hidden" id="soumiSection">
+
+            <div class="icon">👧</div>
+
+            <h2>So you are Soumi! 😂</h2>
+
+            <p>
+                Enter the first three digits of either
+                Meghdoot's number or your brother's.
+            </p>
+
+            <input
+                type="number"
+                id="soumiNumber"
+                placeholder="XXX"
+            >
+
+            <button onclick="checkSoumi()">
+                Continue 👀
+            </button>
+
+            <p id="soumiMessage" class="message"></p>
+
+        </section>
+
+
+        <!-- SOUMI CHOICE -->
+        <section class="card hidden" id="drowningSection">
+
+            <div class="icon">🌊</div>
+
+            <h2>Okay, Soumi...</h2>
+
+            <p>
+                Two people are drowning in a well.
+            </p>
+
+            <h3>
+                Who will you save?
+            </h3>
+
+            <div class="choices">
+
+                <button onclick="saveAuroshree()">
+                    💗 Auroshree
+                </button>
+
+                <button onclick="saveMeghdoot()">
+                    ❤️ Meghdoot
+                </button>
+
+            </div>
+
+            <p class="small-text">
+                Hint: There might be a way to save BOTH... 👀
+            </p>
+
+            <p id="drowningMessage" class="message"></p>
+
+        </section>
+
+
+        <!-- FINAL SOUMI -->
+        <section class="card hidden" id="finalSoumiSection">
+
+            <div class="rakhi-big">🪢</div>
+
+            <h2>Happy Rakhi, Motka! 😂❤️</h2>
+
+            <p>
+                You somehow saved everyone!
+            </p>
+
+            <h3>
+                Now choose your fate...
+            </h3>
+
+            <div class="gift-grid small-grid">
+
+                <button onclick="soumiGift(1)">
+                    1️⃣
+                </button>
+
+                <button onclick="soumiGift(2)">
+                    2️⃣
+                </button>
+
+                <button onclick="soumiGift(3)">
+                    3️⃣
+                </button>
+
+                <button onclick="soumiGift(4)">
+                    4️⃣
+                </button>
+
+            </div>
+
+            <div id="soumiGiftResult" class="gift-result"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Made with ❤️ by Pallab
+        </p>
+
+        <p>
+            🪢 Happy Raksha Bandhan 🪢
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
