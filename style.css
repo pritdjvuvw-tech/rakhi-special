@@ -1,0 +1,441 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #ffe0ec, transparent 35%),
+        radial-gradient(circle at bottom right, #ffd6a5, transparent 35%),
+        linear-gradient(135deg, #fff5f7, #ffe9d6);
+
+    color: #4a2633;
+
+    overflow-x: hidden;
+}
+
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 55px 20px 30px;
+}
+
+.rakhi {
+    font-size: 70px;
+
+    animation: rotateRakhi 4s infinite ease-in-out;
+}
+
+header h1 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: clamp(2rem, 6vw, 4rem);
+
+    color: #c83b63;
+
+    margin-top: 10px;
+}
+
+.welcome {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: #8e2449;
+
+    margin-top: 5px;
+}
+
+.subtitle {
+    margin-top: 8px;
+
+    color: #815866;
+}
+
+
+/* MAIN */
+
+main {
+    width: min(650px, 92%);
+
+    margin: auto;
+
+    padding-bottom: 40px;
+}
+
+
+/* CARD */
+
+.card {
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(12px);
+
+    border: 2px solid rgba(255, 160, 190, 0.35);
+
+    border-radius: 30px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(130, 48, 75, 0.12);
+
+    animation: appear 0.6s ease;
+}
+
+.card h2 {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 2rem;
+
+    color: #b72d59;
+
+    margin: 12px 0;
+}
+
+.card h3 {
+    margin: 20px 0;
+
+    line-height: 1.6;
+}
+
+.card p {
+    line-height: 1.7;
+}
+
+
+/* ICON */
+
+.icon {
+    font-size: 55px;
+}
+
+
+/* INPUT */
+
+input {
+    display: block;
+
+    width: 80%;
+
+    margin: 25px auto 15px;
+
+    padding: 15px 18px;
+
+    border-radius: 15px;
+
+    border: 2px solid #f2a8bd;
+
+    background: #fffafa;
+
+    outline: none;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #c83b63;
+
+    box-shadow: 0 0 0 4px rgba(200, 59, 99, 0.12);
+}
+
+
+/* BUTTONS */
+
+button {
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 13px 24px;
+
+    margin: 8px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #d94872,
+        #a92f59
+    );
+
+    box-shadow:
+        0 8px 20px rgba(169, 47, 89, 0.2);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(169, 47, 89, 0.3);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* CHOICES */
+
+.choices {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.choices button {
+    min-width: 150px;
+}
+
+
+/* GIFT GRID */
+
+.gift-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(130px, 1fr));
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.gift-grid button {
+    min-height: 100px;
+
+    font-size: 2rem;
+
+    background: linear-gradient(
+        145deg,
+        #e65b83,
+        #b72d59
+    );
+}
+
+.gift-grid span {
+    font-size: 0.9rem;
+}
+
+.small-grid {
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+.small-grid button {
+    min-height: 70px;
+}
+
+
+/* RESULTS */
+
+.message {
+    margin-top: 20px;
+
+    font-weight: 600;
+
+    color: #b72d59;
+}
+
+.gift-result {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: #fff0f4;
+
+    color: #9e284d;
+
+    font-weight: 700;
+
+    font-size: 1.1rem;
+
+    animation: appear 0.4s ease;
+}
+
+.special {
+    font-family: "Baloo 2", cursive;
+
+    font-size: 1.4rem;
+
+    color: #c83b63;
+}
+
+.small-text {
+    font-size: 0.9rem;
+
+    color: #85616d;
+}
+
+.rakhi-big {
+    font-size: 90px;
+
+    animation: pulse 2s infinite;
+}
+
+
+/* HIDDEN */
+
+.hidden {
+    display: none;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #8e5a69;
+
+    font-size: 0.9rem;
+}
+
+
+/* FLOATING FLOWERS */
+
+.floating {
+    position: fixed;
+
+    pointer-events: none;
+
+    opacity: 0.6;
+
+    animation: float 6s infinite ease-in-out;
+}
+
+.flower1 {
+    left: 5%;
+    top: 20%;
+}
+
+.flower2 {
+    right: 7%;
+    top: 35%;
+}
+
+.flower3 {
+    left: 10%;
+    bottom: 15%;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes rotateRakhi {
+    0%, 100% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(10deg);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 35px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .welcome {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    input {
+        width: 95%;
+    }
+
+    .choices {
+        flex-direction: column;
+    }
+
+    .choices button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .small-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+```
