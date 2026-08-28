@@ -1,11 +1,15 @@
-```javascript
 function showSection(id) {
 
     document.querySelectorAll(".card").forEach(card => {
         card.classList.add("hidden");
     });
 
-    document.getElementById(id).classList.remove("hidden");
+    const targetSection = document.getElementById(id);
+    if (targetSection) {
+        targetSection.classList.remove("hidden");
+    } else {
+        console.error("Section not found:", id);
+    }
 
     window.scrollTo({
         top: 0,
@@ -18,8 +22,14 @@ function showSection(id) {
 
 function checkAge() {
 
-    const age = Number(document.getElementById("age").value);
+    const ageInput = document.getElementById("age");
+    const age = Number(ageInput.value);
     const message = document.getElementById("ageMessage");
+
+    if (!ageInput.value) {
+        message.innerHTML = "Please enter your age 😊";
+        return;
+    }
 
     if (age > 15) {
 
@@ -299,4 +309,3 @@ function createConfetti() {
         }, duration);
     }
 }
-```
